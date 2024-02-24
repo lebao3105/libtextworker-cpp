@@ -1,0 +1,6 @@
+[submodule "submodules/jsoncpp"]
+	path = submodules/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp
+[submodule "submodules/mINI"]
+	path = submodules/mINI
+	url = https://github.com/metayeti/mINI
