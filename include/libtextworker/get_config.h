@@ -51,13 +51,16 @@ namespace libtextworker
 			bool useJSON = false;
 			
 			#ifdef INI_SUPPORT
+			/* The name says it all. Only available with INI_SUPPORT macro defined. */
 			mINI::INIStructure INIreader;
 			#endif
 
 			#ifdef JSON_SUPPORT
+			/* The name says it all. Only available with JSON_SUPPORT macro defined. */
 			Json::Value JSONreader;
 			#endif
 
+			/* Default settings. */
 			std::map<std::string, std::any> OEMSettings;
 
 			#ifdef INI_SUPPORT
