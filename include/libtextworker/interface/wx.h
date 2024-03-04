@@ -29,8 +29,13 @@ namespace libtextworker::UI
         {
         public:
             bool recursive_configure = true;
+
+            /* Returns a wxFont object based on current settings. */
             wxFont GetFont();
-            void Configure(wxControl* widget, std::optional<std::string> color, bool recursivelly);
+            
+            template <typename T>
+            /* Configures a wx control. */
+            void Configure(T* widget, std::optional<std::string> color, bool recursivelly);
         };
     };
 }

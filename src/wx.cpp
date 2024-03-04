@@ -16,13 +16,12 @@ wxFont wxColorManager::GetFont()
     return wxFont(size, wxFONTFAMILY_MODERN, FONTST[style], FONTWT[weight], 0, family);
 }
 
-void wxColorManager::Configure(wxControl* widget, std::optional<std::string> color, bool recursivelly)
+template <typename T>
+void wxColorManager::Configure(T* widget, std::optional<std::string> color, bool recursivelly)
 {
-    // std::string fg;
-    // std::string bg;
-
-    // std::tie(bg, fg) = this->GetColors(color);
-    // Needs a converter to RGB
+    if (recursive_configure)
+        for (auto child: widget->GetChildren())
+            Configure(child, color, recursivelly);
 
     wxFont font = GetFont();
     widget->SetFont(font);
